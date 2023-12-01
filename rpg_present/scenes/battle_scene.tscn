@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://b841lc1i2ygn8"]
+
+[ext_resource type="PackedScene" uid="uid://7ons7cxdnlf4" path="res://scenes/enemy_group.tscn" id="1_0no7g"]
+[ext_resource type="Script" path="res://scripts/battle_scene.gd" id="1_pfxsm"]
+[ext_resource type="Texture2D" uid="uid://b0p6ltkltyfij" path="res://assets/battle_background_temp.png" id="1_vi71p"]
+[ext_resource type="PackedScene" uid="uid://dgdf3wi0ucwpd" path="res://scenes/player_group.tscn" id="3_ii7dw"]
+[ext_resource type="PackedScene" uid="uid://nohjpfvxasg1" path="res://scenes/card_space.tscn" id="5_x27kq"]
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_pfxsm")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1196.0
+texture = ExtResource("1_vi71p")
+
+[node name="EnemyGroup" parent="." instance=ExtResource("1_0no7g")]
+position = Vector2(1344, 620)
+
+[node name="PlayerGroup" parent="." instance=ExtResource("3_ii7dw")]
+position = Vector2(576, 620)
+
+[node name="CardSpace" parent="." instance=ExtResource("5_x27kq")]

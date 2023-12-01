@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://cebphqowck5jw"]
+
+[ext_resource type="Script" path="res://cards/cards_scripts/card_base.gd" id="1_jkqqj"]
+[ext_resource type="Texture2D" uid="uid://chydtj7f02bm1" path="res://cards/cards_assets/cards_borders/cardborder.png" id="2_sb445"]
+[ext_resource type="Texture2D" uid="uid://cg74dd4bv6g2n" path="res://cards/cards_assets/cards_borders/Gold_Border.png" id="3_xgv16"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rng0r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3o3yc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tno7b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0crd"]
+
+[node name="CardBase" type="MarginContainer"]
+offset_right = 250.0
+offset_bottom = 350.0
+pivot_offset = Vector2(125, 175)
+script = ExtResource("1_jkqqj")
+
+[node name="Card" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Border" type="Sprite2D" parent="."]
+texture = ExtResource("2_sb445")
+centered = false
+
+[node name="DisplayInfo" type="Node" parent="."]
+
+[node name="Mana" type="RichTextLabel" parent="DisplayInfo"]
+visible = false
+offset_left = 220.0
+offset_top = 13.0
+offset_right = 240.0
+offset_bottom = 33.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_rng0r")
+fit_content = true
+
+[node name="Attack" type="RichTextLabel" parent="DisplayInfo"]
+visible = false
+offset_left = 15.0
+offset_top = 300.0
+offset_right = 45.0
+offset_bottom = 330.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_3o3yc")
+
+[node name="Block" type="RichTextLabel" parent="DisplayInfo"]
+visible = false
+offset_left = 220.0
+offset_top = 300.0
+offset_right = 250.0
+offset_bottom = 330.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_tno7b")
+
+[node name="Name" type="RichTextLabel" parent="DisplayInfo"]
+visible = false
+offset_left = 95.0
+offset_top = 200.0
+offset_right = 175.0
+offset_bottom = 220.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_a0crd")
+
+[node name="Focus" type="TextureButton" parent="."]
+layout_mode = 2
+texture_hover = ExtResource("3_xgv16")
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="Focus" to="." method="_on_focus_mouse_entered"]
+[connection signal="mouse_exited" from="Focus" to="." method="_on_focus_mouse_exited"]

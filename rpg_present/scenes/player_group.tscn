@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgdf3wi0ucwpd"]
+
+[ext_resource type="Script" path="res://scripts/player_group.gd" id="1_l7n8x"]
+[ext_resource type="PackedScene" uid="uid://b7hr6is5dwh3h" path="res://scenes/character.tscn" id="1_o432n"]
+
+[node name="PlayerGroup" type="Node2D"]
+script = ExtResource("1_l7n8x")
+
+[node name="Character" parent="." instance=ExtResource("1_o432n")]
+
+[node name="Character2" parent="." instance=ExtResource("1_o432n")]
+
+[editable path="Character"]
+[editable path="Character2"]

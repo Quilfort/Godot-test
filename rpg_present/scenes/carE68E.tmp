@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://nohjpfvxasg1"]
+
+[ext_resource type="Script" path="res://cards/cards_scripts/DeckDraw.gd" id="1_iyhhq"]
+[ext_resource type="Script" path="res://cards/cards_scripts/card_space.gd" id="1_y3rqx"]
+[ext_resource type="Texture2D" uid="uid://cqtk422ewpc8f" path="res://cards/cards_assets/cards_borders/Back_Texture.png" id="2_2h0ux"]
+[ext_resource type="Texture2D" uid="uid://cg74dd4bv6g2n" path="res://cards/cards_assets/cards_borders/Gold_Border.png" id="3_8rx3a"]
+
+[node name="CardSpace" type="Node2D"]
+script = ExtResource("1_y3rqx")
+
+[node name="Deck" type="Node2D" parent="."]
+
+[node name="DeckDraw" type="TextureButton" parent="Deck"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_2h0ux")
+texture_pressed = ExtResource("2_2h0ux")
+texture_hover = ExtResource("2_2h0ux")
+texture_disabled = ExtResource("3_8rx3a")
+script = ExtResource("1_iyhhq")

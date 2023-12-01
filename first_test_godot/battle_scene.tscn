@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://cylt52exirug6"]
+
+[ext_resource type="PackedScene" uid="uid://c6e1glpba6kf1" path="res://enemy_group.tscn" id="1_sue6b"]
+[ext_resource type="Texture2D" uid="uid://r4ehl6t6dp5s" path="res://Sprites/background.png" id="1_yntjb"]
+[ext_resource type="PackedScene" uid="uid://cataquvvbgsih" path="res://player_group.tscn" id="3_la1qg"]
+
+[node name="BattleScene" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.960784, 0.717647, 0.929412, 1)
+offset_top = -19.0
+offset_right = 591.0
+offset_bottom = 346.0
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_yntjb")
+expand_mode = 1
+
+[node name="EnemyGroup" parent="." instance=ExtResource("1_sue6b")]
+position = Vector2(60, 50)
+
+[node name="PlayerGroup" parent="." instance=ExtResource("3_la1qg")]
+position = Vector2(525, 50)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Choice" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Attack" type="Button" parent="CanvasLayer/Choice"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Defend" type="Button" parent="CanvasLayer/Choice"]
+layout_mode = 2
+text = "Defend"
+
+[node name="Run" type="Button" parent="CanvasLayer/Choice"]
+layout_mode = 2
+text = "Run"
